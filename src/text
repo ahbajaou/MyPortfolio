@@ -1,0 +1,61 @@
+<div className='absolute top-0 left-0 md:w-full  z-[-1] '>
+    <BezierAnimation />
+  </div>
+
+  {/* Navbar */}
+  <nav className={`md:w-[96%]  fixed z-[1000] flex justify-between items-center bg-[#E1DACE] px-8 py-4 rounded-lg border-4 border-black shadow-[6px_6px_0px_black] transition-all duration-300 hover:translate-x-1 hover:translate-y-1`}>
+    <h1 className="font-bold text-4xl tracking-wide">AB.</h1>
+    <ul className="flex space-x-8 font-semibold text-xl">
+      <li className="hover:underline cursor-pointer">Home</li>
+      <li className="hover:underline cursor-pointer">About</li>
+      <li className="hover:underline cursor-pointer">Project</li>
+    </ul>
+  </nav>
+
+  {/* Main Content */}
+  <div className="flex flex-col  md:flex-row items-center justify-center md:w-full mt-10  gap-[20%]">
+    {/* Text Section */}
+    <div className="text-left">
+      <h1 className="text-[100px] w-[60%] font-extrabold uppercase leading-[1.1]">
+        WHO <span className={`inline-flex items-center justify-center w-[100px] h-[100px] bg-[#024970] rounded-full  text-black text-[80px]`}>IS</span> AHMED
+      </h1>
+      <p className="mt-4 text-lg font-semibold max-w-md">
+        Software Developer | Frontend Developer | React.js, Tailwind CSS | Delivered responsive projects with 50% faster load times and improved user engagement by 30%.
+      </p>
+      <button className={`text-[#E1DACE]	 mt-6 bg-[#024970] px-6 py-3 font-bold rounded-lg border-4 border-black shadow-[6px_6px_0px_black]  transition-all duration-300 hover:translate-x-1 hover:translate-y-1`}>
+        My Resume
+      </button>
+    </div>
+
+    {/* Image Section */}
+    <div className="relative mt-10  w-[30%]">
+      <div className={` rounded-lg p-6  relative flex flex-col items-center transition-all duration-300 hover:translate-x-1 hover:translate-y-1`}>
+        <img
+          src={img} // Replace with actual image
+          alt="Ahmed Bajaou"
+          className="md:w-[400px] md:h-[500px] object-cover" />
+        <div className="absolute -bottom-6 bg-[#E1DACE] px-4 py-2 border-4 border-black shadow-md text-center rounded-lg w-[40%] h-[15%] top-[50%] right-[70%]">
+          <p className="font-bold text-[100%]">Ahmed Bajaou</p>
+          <p className="text-sm font-bold text-[100%]">Software Developer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div className=' '>
+    <LatestProjects />
+  </div>
+  <div className=' '>
+    <SkillsSection />
+  </div>
+</div><div>
+<div className='min-h-64 md:w-full bg-[#003366] flex items-center justify-center '>
+    <div className='flex items-center justify-center flex-col text-white gap-3'>
+      <h1 className='text-xl font-bold '>GET IN TOUCHE</h1>
+      <h4>Connect with me on linkedin or email me at ahmedbajaou@gmail.com</h4>
+      <h1 className='text-xl font-bold'>FOLLOW ME</h1>
+      <div className=' flex flex-row p-0 m-0 items-center justify0-center'>
+        <TiSocialLinkedinCircular size={50} />
+        <FaGithub size={40} />
+      </div>
+    </div>
+  </div>
