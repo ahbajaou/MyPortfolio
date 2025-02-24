@@ -176,7 +176,7 @@ const Skills = () => {
     "bg-orange-500",
   ];
   return (
-    <section id="skills" className="min-h-screen w-full flex flex-col justify-center items-center">
+    <section id="skills" className="min-h-screen w-full flex flex-col justify-center items-center p-3">
       <div className='w-full  h-[15%]  text-center'>
         <Button name="Skills" />
       </div>
