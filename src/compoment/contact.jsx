@@ -5,11 +5,12 @@ import { FiMapPin } from "react-icons/fi";
 import { FiPhoneCall } from "react-icons/fi";
 import { FaLinkedin } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
+import { FaSquareGithub } from "react-icons/fa6";
 
 
 export const ContactSection = () => {
   return (
-    <div className="md:w-[30%] sm:w-[90%] text-[#323232] p-6 flex flex-col gap-5 ">
+    <div className="md:w-[30%] sm:w-[90%] text-[#323232] p-10 flex flex-col gap-5 ">
       {/* Header */}
       <h2 style={{fontSize:'25px',fontWeight:'900',}}className=" mb-2">Contact Details</h2>
       <p className="text-sm mb-4">
@@ -19,8 +20,8 @@ export const ContactSection = () => {
 
       {/* Contact Info */}
       <div className="space-y-4 text-[#323232] flex flex-col gap-6">
-        <Contact icon={<AiOutlineMail size={30} />} label="Email" value="ahmedbajaou@gmail.com" link="mailto:ahmedbajaou@gmail.com" />
-        <Contact icon={<FiPhoneCall  size={30} />} label="Phone" value="+212642829531" link="tel:+212642829531" />
+        <Contact icon={<AiOutlineMail size={30} />} label="Email" value="ahmedbajaou@gmail.com"  />
+        <Contact icon={<FiPhoneCall  size={30} />} label="Phone" value="+212642829531"  />
         <Contact icon={<FiMapPin  size={30} />} label="Address" value="Ben Guerir, Hay My Rachid" />
 
         {/* Social Media */}
@@ -28,8 +29,10 @@ export const ContactSection = () => {
           <a href="https://linkedin.com/in/ahmedbajaou" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
           <FaLinkedin size={40} />
           </a>
-          <a href="https://discord.com/users/ahmedbajaou" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
-            <FaDiscord size={40} />
+          <a href="https://github.com/ahbajaou" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
+            
+            <FaSquareGithub enableBackground={'#323232'} size={40}/>
+
           </a>
         </div>
       </div>

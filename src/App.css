@@ -61,6 +61,8 @@ background-position: 0 0, 53px 53px; */
     radial-gradient(50% 50%, var(--_g)) calc(var(--s) / 2) calc(var(--s) / 2)
       var(--c1);
   background-size: var(--s) var(--s);
+  width: 100vw;
+  height: 100vh;
 }
 
 
@@ -78,6 +80,7 @@ background-position: 0 0, 53px 53px; */
     radial-gradient(50% 50%, var(--_g)) calc(var(--s) / 2) calc(var(--s) / 2)
       var(--c1);
   background-size: var(--s) var(--s);
+  width: 100%;
 }
 .project{
   --s: 50px; /* control the size */
@@ -93,4 +96,12 @@ background-position: 0 0, 53px 53px; */
     radial-gradient(50% 50%, var(--_g)) calc(var(--s) / 2) calc(var(--s) / 2)
       var(--c1);
   background-size: var(--s) var(--s);
+}
+
+.items{
+
+  background-color: transparent; /* Change background on hover */
+  width: 70px; /* Expand width on hover */
+  border: 2px solid transparent; /* Add black border */
+  box-shadow: 4px 4px 0px transparent; /* Add shadow effect */
 }
