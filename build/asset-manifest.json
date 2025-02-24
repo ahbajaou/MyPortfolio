@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/ahbajaou.github.io/static/css/main.0e692548.css",
+    "main.js": "/ahbajaou.github.io/static/js/main.ec334911.js",
+    "static/js/453.ed3810f9.chunk.js": "/ahbajaou.github.io/static/js/453.ed3810f9.chunk.js",
+    "static/media/a.png": "/ahbajaou.github.io/static/media/a.0dc934d69cd617eb397b.png",
+    "static/media/coding.png": "/ahbajaou.github.io/static/media/coding.851a1bf2460ce5cb0f9b.png",
+    "index.html": "/ahbajaou.github.io/index.html",
+    "main.0e692548.css.map": "/ahbajaou.github.io/static/css/main.0e692548.css.map",
+    "main.ec334911.js.map": "/ahbajaou.github.io/static/js/main.ec334911.js.map",
+    "453.ed3810f9.chunk.js.map": "/ahbajaou.github.io/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0e692548.css",
+    "static/js/main.ec334911.js"
+  ]
+}
