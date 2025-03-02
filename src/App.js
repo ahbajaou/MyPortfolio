@@ -73,7 +73,7 @@ const ProjectCard = ({ project }) => {
     }
 
   return (
-      <div className="bg-[#E1DACE] border-4 p-5 border-[#323232] shadow-[4px_4px_0px_#323232]  w-[90%]  md:w-[20%]  transition-all duration-300 hover:translate-x-1 hover:translate-y-1">
+      <div className="bg-[#E1DACE] border-4 p-5 border-[#323232] shadow-[4px_4px_0px_#323232]   w-[90%]  md:w-[22%]  transition-all duration-300 hover:translate-x-1 hover:translate-y-1">
         <div className="bg-[#E1DACE] p-3 w-full flex items-center border-b-4 border-[#323232]">
           <div className="flex space-x-2">
             <span className="w-3 h-3 bg-[#323232] rounded-full"></span>
@@ -231,7 +231,7 @@ const Skills = () => {
 
 const Projects = () => {
   return (
-    <section id="projects" className="project  min-h-screen w-full flex flex-col justify-center items-center gap-10">
+    <section id="projects" className="project  p-5 min-h-screen w-full flex flex-col justify-center items-center gap-10">
       <div className='w-full min-h-[100%] text-center'>
         <Button name="Project" />
       </div>
