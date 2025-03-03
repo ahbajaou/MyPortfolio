@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 export const Form = () => {
   const [formData, setFormData] = useState({
@@ -11,7 +13,16 @@ export const Form = () => {
 
   const SendEmail = async (event) => {
     event.preventDefault();
-    console.log('Hello sender!!');
+
+    toast.success('Email Successfully !',{
+      style: {
+        background: '#E1DACE', // Background color
+        color: '#323232', // Text color
+        border: '2px solid #323232', // Border color
+        boxShadow: '6px 6px 0px #323232', // Shadow
+        padding: '16px',
+      },
+    })
     console.log(process.env.REACT_APP_API_URL);
     try {
       const response = await fetch(process.env.REACT_APP_API_URL, {
@@ -25,9 +36,6 @@ export const Form = () => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      alert("Email sent successfully!");
-      
-      // Reset input fields visually
       setFormData({
         to: 'chebchoub1337@gmail.com',
         subject: '',
@@ -76,6 +84,10 @@ export const Form = () => {
           <button type="submit" className="flip-card__btn">Send</button>
         </form>
       </div>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+    />
     </StyledWrapper>
   );
 };
