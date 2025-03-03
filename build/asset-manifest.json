@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ahbajaou.github.io/static/css/main.60d9ada0.css",
-    "main.js": "/ahbajaou.github.io/static/js/main.25463572.js",
+    "main.css": "/ahbajaou.github.io/static/css/main.b7be06a2.css",
+    "main.js": "/ahbajaou.github.io/static/js/main.75ab6566.js",
     "static/js/453.ed3810f9.chunk.js": "/ahbajaou.github.io/static/js/453.ed3810f9.chunk.js",
     "static/media/a.png": "/ahbajaou.github.io/static/media/a.bf27c28cc33763cc1e8f.png",
     "static/media/trance.png": "/ahbajaou.github.io/static/media/trance.7c4f2414fac1314547e3.png",
@@ -10,12 +10,12 @@
     "static/media/ahmed_bajaou.pdf": "/ahbajaou.github.io/static/media/ahmed_bajaou.a448e7267ffd709b3432.pdf",
     "static/media/webserver.png": "/ahbajaou.github.io/static/media/webserver.addcd4e67d73429355ec.png",
     "index.html": "/ahbajaou.github.io/index.html",
-    "main.60d9ada0.css.map": "/ahbajaou.github.io/static/css/main.60d9ada0.css.map",
-    "main.25463572.js.map": "/ahbajaou.github.io/static/js/main.25463572.js.map",
+    "main.b7be06a2.css.map": "/ahbajaou.github.io/static/css/main.b7be06a2.css.map",
+    "main.75ab6566.js.map": "/ahbajaou.github.io/static/js/main.75ab6566.js.map",
     "453.ed3810f9.chunk.js.map": "/ahbajaou.github.io/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.60d9ada0.css",
-    "static/js/main.25463572.js"
+    "static/css/main.b7be06a2.css",
+    "static/js/main.75ab6566.js"
   ]
 }
