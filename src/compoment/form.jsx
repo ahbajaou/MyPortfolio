@@ -1,9 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 export const Form = () => {
   const [formData, setFormData] = useState({
-    to: 'chebchoub1337@gmail.com',
+    to: 'ahmedbajaou@gmail.com',
     subject: '',
     text: ''
   });
@@ -12,9 +12,9 @@ export const Form = () => {
   const SendEmail = async (event) => {
     event.preventDefault();
     console.log('Hello sender!!');
-    console.log(formData);
+    console.log(process.env.REACT_APP_API_URL);
     try {
-      const response = await fetch('http://localhost:5050/send-mail', {
+      const response = await fetch(process.env.REACT_APP_API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,6 @@ export const Form = () => {
           <input
             value={formData.subject}
             onChange={handleChange}
-            ref={subjectRef}  // Reference input field
             type="text"
             placeholder="Subject"
             name="subject"
@@ -65,7 +64,6 @@ export const Form = () => {
           <textarea
             value={formData.text}
             onChange={handleChange}
-            ref={textRef}  // Reference input field
             className="textarea w-[100%]"
             id="w3review"
             type="text"

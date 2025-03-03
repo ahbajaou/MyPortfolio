@@ -61,7 +61,7 @@ const projects = [
 ];
 
 const skills = [
-  { id: 1, category: "Technical Skills", skills: ["JavaScript", "React.js", "Typescript", "C/C++" , "Git" ,"Docker","Figma","Tailwind CSS","Bootstrap CSS" ] },
+  { id: 1, category: "Technical Skills", skills: ["JavaScript", "React.js", "Typescript", "C/C++" , "Git" ,"Docker","Figma","Tailwind CSS","Bootstrap CSS" ,"Node js" , "Express js"] },
   { id: 2, category: "Soft Skills", skills: ["Teamwork & Collaboration", "Communication", "Problem-Solving" , "Adaptability" ," Time Management" , "Creativity & Innovation" , "Leadership & Initiative"] },
 ];
 
@@ -102,7 +102,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav style={{width:'fit-content',height:'fit-content'}}  className=" z-[1000] fixed top-0 left-50  md:gap-10 gap-5 m-5 flex justify-center items-center bg-[#E1DACE] border-4 border-[#323232] shadow-[6px_6px_0px_#323232]">
+    <nav style={{width:'fit-content',height:'fit-content'}}  className=" z-[1000] fixed top-0 left-100  md:gap-10 gap-5 m-5 flex justify-center items-center bg-[#E1DACE] border-4 border-[#323232] shadow-[6px_6px_0px_#323232]">
       <ul className="flex font-semibold text-[#323232] p-5">
         <li onClick={() => scrollToPage("home")} className="items hover:bg-[#FFC567] text-center text-[16px] hover:w-[70px] hover:border-2 hover:border-[#323232] hover:shadow-[4px_4px_0px_#323232]">Home</li>
         <li onClick={() => scrollToPage("projects")} className="items hover:bg-[#FFC567] text-center text-[16px] hover:w-[70px] hover:border-2 hover:border-[#323232] hover:shadow-[4px_4px_0px_#323232]">Projects</li>
@@ -132,8 +132,8 @@ const Home = () => {
                AHMED
             </h1>
             <p className="mt-4 text-lg font-semibold text-[#323232] ">  
-            Ahmed Bajaou – Software Engineer
-            Based in Marrakech, I have two years of experience developing innovative software solutions. I am passionate about leveraging technology to solve real-world challenges.            </p>
+            Ahmed Bajaou – Software Engineer, I have two years of experience developing innovative software solutions. 
+            I am passionate about leveraging technology to solve real-world challenges.            </p>
             <a 
             href={Myresume} // Path to your file
             download="Ahmed_Bajaou_Resume.pdf" // File name when downloaded            
@@ -261,11 +261,13 @@ const ContactDetail = () => {
 const App = () => {
   return (
     <div className="flex flex-col justify-center items-center ">
-      <Navbar />
-      <Home />
-      <Projects />
-      <Skills />
-      <ContactDetail />
+        <div className="flex flex-col justify-center items-center w-[100%] max-w-[1400px] min-w-[200px] mx-auto">
+            <Navbar />
+            <Home />
+            <Projects />
+            <Skills />
+            <ContactDetail />
+        </div>
     </div>
   );
 };

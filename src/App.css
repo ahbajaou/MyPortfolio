@@ -63,6 +63,7 @@ background-position: 0 0, 53px 53px; */
   background-size: var(--s) var(--s);
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 
