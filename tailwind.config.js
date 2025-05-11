@@ -2,6 +2,7 @@ const { height } = require('@fortawesome/free-solid-svg-icons/fa0');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],

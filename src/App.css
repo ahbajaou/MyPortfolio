@@ -2,107 +2,116 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  /* background:  #E1DACE; */
-  /* background: repeating-radial-gradient(circle, #E1DACE, #E1DACE 5px, #ba955b 6px);
-  background-size: 50px 100px; */
-  /* background: linear-gradient(
-    45deg,
-    #0000 calc(25% / 3),
-    #ffffff 0 calc(50% / 3),
-    #0000 0 calc(250% / 3),
-    #ffffff 0 calc(275% / 3),
-    #0000 0
-  ),
-  linear-gradient(
-    45deg,
-    #ffffff calc(25% / 3),
-    #0000 0 calc(50% / 3),
-    #ffffff 0 25%,
-    #0000 0 75%,
-    #ffffff 0 calc(250% / 3),
-    #0000 0 calc(275% / 3),
-    #ffffff 0
-  ),
-  linear-gradient(
-    -45deg,
-    #0000 calc(25% / 3),
-    #ffffff 0 calc(50% / 3),
-    #0000 0 calc(250% / 3),
-    #ffffff 0 calc(275% / 3),
-    #0000 0
-  ),
-  linear-gradient(
-      -45deg,
-      #ffffff calc(25% / 3),
-      #0000 0 calc(50% / 3),
-      #ffffff 0 25%,
-      #0000 0 75%,
-      #ffffff 0 calc(250% / 3),
-      #0000 0 calc(275% / 3),
-      #ffffff 0
-    )
-    #c77979;
-background-size: 106px 106px;
-background-position: 0 0, 53px 53px; */
+@layer components {
+  .grid-pattern-light {
+    width: 100%;
+    height: 100%;
+    --color: #E1E1E1;
+    background-color: #F3F3F3;
+    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
+      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+    background-size: 120px 120px;
+  }
 
-  margin: 0;
-  padding: 0;
-  --s: 50px; /* control the size */
-  --c2: #e0c9a4;
-  --c1: #b1a28b; 
-
-  --_g: var(--c1) 0% 5%, var(--c2) 6% 15%, var(--c1) 16% 25%, var(--c2) 26% 35%,
-    var(--c1) 36% 45%, var(--c2) 46% 55%, var(--c1) 56% 65%, var(--c2) 66% 75%,
-    var(--c1) 76% 85%, var(--c2) 86% 95%, #0000 96%;
-  background: radial-gradient(50% 50% at 100% 0, var(--_g)),
-    radial-gradient(50% 50% at 0 100%, var(--_g)),
-    radial-gradient(50% 50%, var(--_g)),
-    radial-gradient(50% 50%, var(--_g)) calc(var(--s) / 2) calc(var(--s) / 2)
-      var(--c1);
-  background-size: var(--s) var(--s);
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
+  .grid-pattern-dark {
+    width: 100%;
+    height: 100%;
+    --color: rgba(114, 114, 114, 0.3);
+    background-color: #121212;
+    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
+      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+    background-size: 120px 120px;
+  }
 }
 
+/* Add to filepath: /home/chebchoub/Desktop/ahbajaou.github.io/src/index.css */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
 
-.contact{
-  --s: 50px; /* control the size */
-  --c1: #e0c9a4;
-  --c2: #FFC567; 
-
-  --_g: var(--c1) 0% 5%, var(--c2) 6% 15%, var(--c1) 16% 25%, var(--c2) 26% 35%,
-    var(--c1) 36% 45%, var(--c2) 46% 55%, var(--c1) 56% 65%, var(--c2) 66% 75%,
-    var(--c1) 76% 85%, var(--c2) 86% 95%, #0000 96%;
-  background: radial-gradient(50% 50% at 100% 0, var(--_g)),
-    radial-gradient(50% 50% at 0 100%, var(--_g)),
-    radial-gradient(50% 50%, var(--_g)),
-    radial-gradient(50% 50%, var(--_g)) calc(var(--s) / 2) calc(var(--s) / 2)
-      var(--c1);
-  background-size: var(--s) var(--s);
-  width: 100%;
-}
-.project{
-  --s: 50px; /* control the size */
-  --c1: #e0c9a4;
-  --c2: #FFC567; 
-
-  --_g: var(--c1) 0% 5%, var(--c2) 6% 15%, var(--c1) 16% 25%, var(--c2) 26% 35%,
-    var(--c1) 36% 45%, var(--c2) 46% 55%, var(--c1) 56% 65%, var(--c2) 66% 75%,
-    var(--c1) 76% 85%, var(--c2) 86% 95%, #0000 96%;
-  background: radial-gradient(50% 50% at 100% 0, var(--_g)),
-    radial-gradient(50% 50% at 0 100%, var(--_g)),
-    radial-gradient(50% 50%, var(--_g)),
-    radial-gradient(50% 50%, var(--_g)) calc(var(--s) / 2) calc(var(--s) / 2)
-      var(--c1);
-  background-size: var(--s) var(--s);
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
-.items{
+.animate-scroll {
+  animation: scroll 20s linear infinite;
 
-  background-color: transparent; /* Change background on hover */
-  width: 70px; /* Expand width on hover */
-  border: 2px solid transparent; /* Add black border */
-  box-shadow: 4px 4px 0px transparent; /* Add shadow effect */
+}
+
+.scroll-container {
+  display: flex;
+  width: max-content; /* Ensures the content width is calculated correctly */
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-4px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(4px);
+  }
+}
+
+.wave-animation {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.wave-animation:hover span {
+  animation: wave 0.5s ease-in-out;
+}
+
+.wave-animation span {
+  display: inline-block;
+  transform-origin: bottom center;
+}
+
+.wave-animation:hover span:nth-child(1) {
+  animation-delay: 0.00s;
+}
+
+.wave-animation:hover span:nth-child(2) {
+  animation-delay: 0.05s;
+}
+
+.wave-animation:hover span:nth-child(3) {
+  animation-delay: 0.10s;
+}
+
+.wave-animation:hover span:nth-child(4) {
+  animation-delay: 0.15s;
+}
+
+.wave-animation:hover span:nth-child(5) {
+  animation-delay: 0.20s;
+}
+
+.wave-animation:hover span:nth-child(6) {
+  animation-delay: 0.25s;
+}
+
+.wave-animation:hover span:nth-child(7) {
+  animation-delay: 0.30s;
+}
+
+.wave-animation:hover span:nth-child(8) {
+  animation-delay: 0.35s;
+}
+
+.wave-animation:hover span:nth-child(9) {
+  animation-delay: 0.40s;
 }
