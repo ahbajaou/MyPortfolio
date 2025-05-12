@@ -11,7 +11,6 @@ const Hero = () => {
     const { isDarkMode } = useTheme();
     return (
         <div className="flex flex-col w-full overflow-hidden">
-            {/* Home section with full body background */}
             <div className={`full-section ${isDarkMode ? 'grid-pattern-light' : 'grid-pattern-dark'}`}>
                 <div className="container mx-auto px-4">
                     <PopupProvider>
@@ -22,7 +21,6 @@ const Hero = () => {
                     <Scroll />
             </div>
             
-            {/* Projects section */}
             <div className={`w-full ${isDarkMode ? 'bg-white' : 'bg-[#121212]'}`}>
                 <div className="container mx-auto px-4">
                     <Projects />
