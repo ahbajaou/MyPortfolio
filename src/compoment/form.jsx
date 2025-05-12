@@ -3,10 +3,13 @@ import { useTheme } from '../context/isDarkMood';
 import toast, { Toaster } from 'react-hot-toast';
 import { usePopup } from '../context/popupContext';
 
+
+const owner = 'ahmedbajaou@gmail.com';
 export const Form = () => {
   const { isDarkMode } = useTheme();
   const { closePopup } = usePopup();
   const [formData, setFormData] = useState({
+    to: owner,
     subject: '',
     text: ''
   });
@@ -16,10 +19,10 @@ export const Form = () => {
 
     toast.success('Email Sent Successfully!', {
       style: {
-        background: isDarkMode ? '#121212' : '#fff',
-        color: isDarkMode ? '#fff' : '#121212',
-        border: `2px solid ${isDarkMode ? '#fff' : '#121212'}`,
-        boxShadow: `6px 6px 0px ${isDarkMode ? '#fff' : '#121212'}`,
+        background: isDarkMode ? '#ffff' : '#121212',
+        color: isDarkMode ? '#000' : '#fff',
+        border: `2px solid ${isDarkMode ? '#000' : '#000'}`,
+        boxShadow: `6px 6px 0px ${isDarkMode ? '#000' : '#000'}`,
         padding: '16px',
       },
     });
@@ -37,9 +40,11 @@ export const Form = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       setFormData({
+        to: '',
         subject: '',
         text: ''
       });
+      closePopup(false);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -47,24 +52,23 @@ export const Form = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
-    }));
+    setFormData({
+      to: owner,
+      subject: name === 'subject' ? value : formData.subject,
+      text: name === 'text' ? value : formData.text,
+    })
   };
 
   return (
     <div
       className={`fixed inset-0 flex items-center justify-center p-4 
-        ${
-        !isDarkMode ? 'bg-black bg-opacity-75' : 'bg-gray-100 bg-opacity-75'
-      }`}
+        ${!isDarkMode ? 'bg-black bg-opacity-75' : 'bg-gray-100 bg-opacity-75'
+        }`}
     >
       <div
         className={`w-full max-w-md p-6 rounded-lg border-4 border-black 
-        shadow-[6px_4px_0px_black] ${
-          !isDarkMode ? 'bg-[#121212] text-white' : 'bg-white text-gray-800'
-        }`}
+        shadow-[6px_4px_0px_black] ${!isDarkMode ? 'bg-[#121212] text-white' : 'bg-white text-gray-800'
+          }`}
       >
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">Get in Touch</h2>
@@ -85,11 +89,10 @@ export const Form = () => {
             type="text"
             placeholder="Subject"
             name="subject"
-            className={`w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 ${
-              !isDarkMode
+            className={`w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 ${!isDarkMode
                 ? 'bg-[#121212] border-black text-white focus:ring-black'
                 : 'bg-gray-100 border-black text-black focus:ring-black'
-            }`}
+              }`}
             required
           />
           <textarea
@@ -98,20 +101,18 @@ export const Form = () => {
             placeholder="Message"
             name="text"
             rows="5"
-            className={`w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 ${
-              !isDarkMode
+            className={`w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 ${!isDarkMode
                 ? 'bg-[#121212] border-black text-white focus:ring-black'
                 : 'bg-gray-100 border-black text-black focus:ring-black'
-            }`}
+              }`}
             required
           ></textarea>
           <button
             type="submit"
-            className={`w-full py-2 px-4  font-bold border-4 border-black shadow-[6px_4px_0px_black] ${
-              !isDarkMode
+            className={`w-full py-2 px-4  font-bold border-4 border-black shadow-[6px_4px_0px_black] ${!isDarkMode
                 ? 'bg-[#024970] text-white hover:translate-y-1 transition-all:'
                 : 'bg-[#024970] text-white hover:translate-y-1 transition-all'
-            }`}
+              }`}
           >
             Send Message
           </button>

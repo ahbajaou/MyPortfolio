@@ -39,7 +39,7 @@ const Scroll = () => {
   };
 
   return (
-    <div className={`w-full overflow-hidden ${isDarkMode ? 'bg-white' : 'bg-[#121212]'} border-t-4 border-b-4 ${isDarkMode ? 'border-black' : 'border-white'} shadow-[6px_4px_0px_black]`}>
+    <div className={`w-full overflow-hidden ${isDarkMode ? 'bg-white' : 'bg-[#121212]'} border-t-4 border-b-4 ${isDarkMode ? 'border-t-black border-b-black' : 'border-t-white border-b-white'} `}>
       {/* Add custom animation styling */}
       <style jsx>{`
         @keyframes smoothScroll {

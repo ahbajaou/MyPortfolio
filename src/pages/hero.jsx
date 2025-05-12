@@ -10,19 +10,30 @@ import { PopupProvider } from '../context/popupContext.jsx';
 const Hero = () => {
     const { isDarkMode } = useTheme();
     return (
-        <div className='flex flex-col justify-center items-center'>
-            <div className={`${isDarkMode ? 'grid-pattern-light' : 'grid-pattern-dark'} `}>
-                <PopupProvider>
-                    <Navbar />
-                </PopupProvider>
-                <Home />
-                <Scroll />
+        <div className="flex flex-col w-full overflow-hidden">
+            {/* Home section with full body background */}
+            <div className={`full-section ${isDarkMode ? 'grid-pattern-light' : 'grid-pattern-dark'}`}>
+                <div className="container mx-auto px-4">
+                    <PopupProvider>
+                        <Navbar />
+                    </PopupProvider>
+                    <Home />
+                </div>
+                    <Scroll />
             </div>
+            
+            {/* Projects section */}
             <div className={`w-full ${isDarkMode ? 'bg-white' : 'bg-[#121212]'}`}>
-                <Projects />
+                <div className="container mx-auto px-4">
+                    <Projects />
+                </div>
             </div>
-            <div className={`w-full  ${isDarkMode ? 'bg-white' : 'bg-[#121212]'} border-t-8 border-b-4 ${isDarkMode ? 'border-black' : 'border-white'} shadow-[6px_4px_0px_black]`}>
-                <Footer />
+            
+            {/* Footer section */}
+            <div className={`w-full ${isDarkMode ? 'bg-white' : 'bg-[#121212]'} border-t-8 border-b-4 ${isDarkMode ? 'border-black' : 'border-white'}`}>
+                <div className="container mx-auto px-4">
+                    <Footer />
+                </div>
             </div>
         </div>
     )
