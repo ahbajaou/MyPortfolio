@@ -28,17 +28,39 @@ const Scroll = () => {
     { name: "Docker", icon: <FaDocker size={40} />, color: `${isDarkMode ? "#121212" : "white"}` },
     { name: "Git", icon: <FaGitSquare size={40} />, color: `${isDarkMode ? "#121212" : "white"}` },
     { name: "Node.js", icon: <FaNodeJs size={40} />, color: `${isDarkMode ? "#121212" : "white"}` },
-    
   ];
 
+  // Inline styles for smooth scrolling animation
+  const scrollStyles = {
+    '@keyframes smoothScroll': {
+      '0%': { transform: 'translateX(0)' },
+      '100%': { transform: 'translateX(-50%)' }
+    }
+  };
+
   return (
-    <div className={`w-full  overflow-hidden ${isDarkMode ? 'bg-white' : 'bg-[#121212]'} border-t-4 border-b-4 ${isDarkMode ? 'border-black' : 'border-white'} shadow-[6px_4px_0px_black]`}>
-      <div className="relative flex items-center whitespace-nowrap  animate-scroll">
+    <div className={`w-full overflow-hidden ${isDarkMode ? 'bg-white' : 'bg-[#121212]'} border-t-4 border-b-4 ${isDarkMode ? 'border-black' : 'border-white'} shadow-[6px_4px_0px_black]`}>
+      {/* Add custom animation styling */}
+      <style jsx>{`
+        @keyframes smoothScroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .scroll-container {
+          display: flex;
+          align-items: center;
+          white-space: nowrap;
+          width: fit-content;
+          animation: smoothScroll 30s linear infinite;
+        }
+      `}</style>
+      
+      <div className="scroll-container">
         {/* First set of icons */}
         {techStack.map((tech, index) => (
           <div 
             key={`tech-1-${index}`} 
-            className={`flex flex-row gap-5 items-center justify-center mx-12 ${isDarkMode ? 'text-black' : 'text-white'}`}
+            className={`flex p-2 flex-row gap-5 items-center justify-center mx-12 ${isDarkMode ? 'text-black' : 'text-white'} transition-transform hover:scale-110 duration-200`}
           >
             <div className="icon-container">
               <span style={{ color: tech.color }}>{tech.icon}</span>
@@ -47,16 +69,16 @@ const Scroll = () => {
           </div>
         ))}
         
-        {/* Duplicate for seamless scrolling */}
+        {/* Duplicate for seamless scrolling - must be identical to the first set */}
         {techStack.map((tech, index) => (
           <div 
             key={`tech-2-${index}`} 
-            className={`flex flex-col items-center justify-center mx-12 ${isDarkMode ? 'text-black' : 'text-white'}`}
+            className={`flex p-2 flex-row gap-5 items-center justify-center mx-12 ${isDarkMode ? 'text-black' : 'text-white'} transition-transform hover:scale-110 duration-200`}
           >
             <div className="icon-container">
               <span style={{ color: tech.color }}>{tech.icon}</span>
             </div>
-            <span className="mt-2 font-medium text-sm">{tech.name}</span>
+            <span className="mt-2 font-bold text-3xl">{tech.name}</span>
           </div>
         ))}
       </div>

@@ -52,7 +52,7 @@ const Footer = () => {
                 <FaGithub size={32} />
               </a>
               <a 
-                href="https://www.linkedin.com/in/ahmed-bajaou/" 
+                href="https://www.linkedin.com/in/ahmedbajaou/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={`${isDarkMode ? 'hover:text-gray-700' : 'hover:text-gray-300'} transition-colors`}

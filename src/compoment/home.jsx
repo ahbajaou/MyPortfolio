@@ -1,5 +1,5 @@
 import Myresume from '../assets/ahmed_bajaou.pdf';
-import img from '../assets/cheb.png';
+import img from '../assets/cheb1.png';
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { useTheme } from '../context/isDarkMood.jsx';
 import { useState, useEffect } from 'react';
@@ -55,7 +55,7 @@ const Home = () => {
   return (
     <section id="home" className="min-h-screen w-full flex flex-col justify-center items-center">
       <div className={` ${isDarkMode ? 'text-black' : 'text-white'} w-full md:min-h-screen md:w-[90%] px-4 md:mt-0  sm:px-10 flex lg:flex-row 
-            flex-col  md:flex-row items-center`}>
+            flex-col  md:flex-col items-center`}>
           <div className="text-center sm:text-left w-full sm:w-1/2 md:flex md:flex-col ">
             {/* Typing Animation Greeting Section */}
             <div className="mb-6 flex flex-col">
@@ -102,7 +102,7 @@ const Home = () => {
                      top-[70%] left-[0] 
                     md:top-[76%] md:left-[0] `}>
                   <p className="font-bold text-[60%] md:text-[100%]">Ahmed Bajaou</p>
-                  <p className="text-[60%] font-bold md:text-[100%]">Software Developer</p>
+                  <p className="text-[60%] font-bold md:text-[100%]">Software Engineer</p>
                 </div>
               </div>
             </div>

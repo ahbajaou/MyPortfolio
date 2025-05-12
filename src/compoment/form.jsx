@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import { useTheme } from '../context/isDarkMood';
 import toast, { Toaster } from 'react-hot-toast';
-
+import { usePopup } from '../context/popupContext';
 
 export const Form = () => {
+  const { isDarkMode } = useTheme();
+  const { closePopup } = usePopup();
   const [formData, setFormData] = useState({
-    to: 'ahmedbajaou@gmail.com',
     subject: '',
     text: ''
   });
 
-
   const SendEmail = async (event) => {
     event.preventDefault();
 
-    toast.success('Email Successfully !',{
+    toast.success('Email Sent Successfully!', {
       style: {
-        background: '#E1DACE', // Background color
-        color: '#323232', // Text color
-        border: '2px solid #323232', // Border color
-        boxShadow: '6px 6px 0px #323232', // Shadow
+        background: isDarkMode ? '#121212' : '#fff',
+        color: isDarkMode ? '#fff' : '#121212',
+        border: `2px solid ${isDarkMode ? '#fff' : '#121212'}`,
+        boxShadow: `6px 6px 0px ${isDarkMode ? '#fff' : '#121212'}`,
         padding: '16px',
       },
-    })
-    console.log(process.env.REACT_APP_API_URL);
+    });
+
     try {
       const response = await fetch(process.env.REACT_APP_API_URL, {
         method: 'POST',
@@ -37,11 +37,9 @@ export const Form = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       setFormData({
-        to: 'chebchoub1337@gmail.com',
         subject: '',
         text: ''
       });
-            
     } catch (error) {
       console.error('Error:', error);
     }
@@ -56,129 +54,72 @@ export const Form = () => {
   };
 
   return (
-    <StyledWrapper>
-      <div className="flip-card__front w-[350px]">
-        <div className="title">Get in touch</div>
-        <form onSubmit={SendEmail} action="" className="flip-card__form">
+    <div
+      className={`fixed inset-0 flex items-center justify-center p-4 
+        ${
+        !isDarkMode ? 'bg-black bg-opacity-75' : 'bg-gray-100 bg-opacity-75'
+      }`}
+    >
+      <div
+        className={`w-full max-w-md p-6 rounded-lg border-4 border-black 
+        shadow-[6px_4px_0px_black] ${
+          !isDarkMode ? 'bg-[#121212] text-white' : 'bg-white text-gray-800'
+        }`}
+      >
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-bold">Get in Touch</h2>
+          <button
+            className="text-gray-500 hover:text-gray-700 w-6 h-6 border-2 border-black  flex items-center justify-center shadow-[6px_4px_0px_black] hover:translate-y-1 transition-all"
+            onClick={() => closePopup(false)}
+          >
+            ✕
+          </button>
+        </div>
+        <p className="mb-4 text-sm">
+          Please fill out the form below to get in touch with me.
+        </p>
+        <form onSubmit={SendEmail} className="flex flex-col gap-4">
           <input
             value={formData.subject}
             onChange={handleChange}
             type="text"
             placeholder="Subject"
             name="subject"
-            className="flip-card__input w-[100%]"
+            className={`w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 ${
+              !isDarkMode
+                ? 'bg-[#121212] border-black text-white focus:ring-black'
+                : 'bg-gray-100 border-black text-black focus:ring-black'
+            }`}
             required
           />
           <textarea
             value={formData.text}
             onChange={handleChange}
-            className="textarea w-[100%]"
-            id="w3review"
-            type="text"
-            placeholder="..."
+            placeholder="Message"
             name="text"
-            rows="7"
-            cols="25"
+            rows="5"
+            className={`w-full p-3 border-2 rounded-lg focus:outline-none focus:ring-2 ${
+              !isDarkMode
+                ? 'bg-[#121212] border-black text-white focus:ring-black'
+                : 'bg-gray-100 border-black text-black focus:ring-black'
+            }`}
             required
           ></textarea>
-          <button type="submit" className="flip-card__btn">Send</button>
+          <button
+            type="submit"
+            className={`w-full py-2 px-4  font-bold border-4 border-black shadow-[6px_4px_0px_black] ${
+              !isDarkMode
+                ? 'bg-[#024970] text-white hover:translate-y-1 transition-all:'
+                : 'bg-[#024970] text-white hover:translate-y-1 transition-all'
+            }`}
+          >
+            Send Message
+          </button>
         </form>
+        <Toaster position="top-center" reverseOrder={false} />
       </div>
-      <Toaster
-        position="top-center"
-        reverseOrder={false}
-    />
-    </StyledWrapper>
+    </div>
   );
 };
-
-const StyledWrapper = styled.div`
-  .flip-card__front {
-    --input-focus: #fff;
-    --font-color: #323232;
-    --font-color-sub: #666;
-    --bg-color: #fff;
-    --bg-color-alt: #666;
-    --main-color: #323232;
-  }
-
-  .flip-card__front {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    background: #E1DACE;
-    gap: 20px;
-    border: 2px solid var(--main-color);
-    box-shadow: 4px 4px var(--main-color);
-  }
-
-  .flip-card__form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .title {
-    margin: 20px 0 20px 0;
-    font-size: 25px;
-    font-weight: 900;
-    text-align: center;
-    color: var(--main-color);
-  }
-
-  .flip-card__input {
-    border: 2px solid var(--main-color);
-    background-color: var(--bg-color);
-    box-shadow: 4px 4px var(--main-color);
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--font-color);
-    padding: 5px 10px;
-    outline: none;
-  }
-
-  .textarea {
-    border: 2px solid var(--main-color);
-    background-color: var(--bg-color);
-    box-shadow: 4px 4px var(--main-color);
-    font-size: 15px;
-    font-weight: 600;
-    color: #323232;
-    padding: 5px 10px;
-    outline: none;
-  }
-
-  .flip-card__input::placeholder {
-    color: var(--font-color-sub);
-    opacity: 0.8;
-  }
-
-  .flip-card__input:focus {
-    border: 2px solid var(--input-focus);
-  }
-
-  .flip-card__btn:active,
-  .button-confirm:active {
-    box-shadow: 0px 0px var(--main-color);
-    transform: translate(3px, 3px);
-  }
-
-  .flip-card__btn {
-    margin: 20px 0 20px 0;
-    width: 120px;
-    height: 40px;
-    border: 2px solid var(--main-color);
-    background-color: var(--bg-color);
-    box-shadow: 4px 4px var(--main-color);
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--font-color);
-    cursor: pointer;
-  }
-`;
 
 export default Form;
